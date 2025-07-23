@@ -11,14 +11,14 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import com.codelab.birthdaycard.ui.theme.AndroidcodelabbirthdaycardTheme
+import com.codelab.birthdaycard.ui.theme.BirthdayCardTheme
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
-            AndroidcodelabbirthdaycardTheme {
+            BirthdayCardTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
                     Greeting(
                         name = "Android",
@@ -33,15 +33,16 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun Greeting(name: String, modifier: Modifier = Modifier) {
     Text(
-        text = "Hello $name!",
+        text = "Hello, $name!",
         modifier = modifier
     )
 }
 
-@Preview(showBackground = true)
+@Preview(showBackground = false,
+    showSystemUi = true)
 @Composable
 fun GreetingPreview() {
-    AndroidcodelabbirthdaycardTheme {
-        Greeting("Android")
+    BirthdayCardTheme {
+        Greeting("World")
     }
 }
